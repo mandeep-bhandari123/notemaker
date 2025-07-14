@@ -72,6 +72,7 @@
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+  animation:flyIn 1s ease forwards;
 }
 .btn{
   padding: 0.5rem 1rem;
@@ -93,4 +94,15 @@
 }
 .btn:hover {
   opacity: 0.9;
+}
+
+@keyframes flyIn{
+  from{
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
