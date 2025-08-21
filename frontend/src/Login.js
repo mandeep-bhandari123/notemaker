@@ -20,7 +20,11 @@ export default function Login() {
       if (!response.ok) throw new Error('Login failed');
 
       const data = await response.json();
+
+      // Save token and login status in localStorage
       localStorage.setItem('token', data.access_token);
+      localStorage.setItem('isLoggedIn', 'true'); // <-- This line is new
+
       navigate('/');
     } catch (error) {
       alert('Invalid email or password!');
